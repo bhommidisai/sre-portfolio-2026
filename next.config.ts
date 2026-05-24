@@ -2,9 +2,11 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/sre-portfolio-2026',
-  assetPrefix: '/sre-portfolio-2026/',
+  // Remove basePath and assetPrefix for S3/CloudFront root hosting
   trailingSlash: true,
+  images: {
+    unoptimized: true, // Required for static export
+  },
 };
 
 export default nextConfig;
